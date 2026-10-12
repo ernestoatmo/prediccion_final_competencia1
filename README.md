@@ -28,14 +28,14 @@ El archivo `01_optimizacion_bayesiana.ipynb` contiene el proceso de *tuning*. Lo
 *Nota:* Para las siguientes corridas, estos parámetros se redondearon levemente a (`n_estimators`: 1250, `num_leaves`: 700, `min_sum_hessian_in_leaf`: 0.003).
 
 ### Paso 2: Cálculo del Tamaño de Envío Óptimo
-Al ejecutar `02_validacion_offline_corte.ipynb`, el modelo evalúa financieramente las predicciones del mes de junio. La salida de este notebook indicará exactamente cuál es el punto de corte que maximiza la ganancia acumulada (por ejemplo, *N* envíos).
+Al ejecutar `02_validacion_corte.ipynb`, el modelo evalúa financieramente las predicciones del mes de junio. La salida de este notebook indicará exactamente cuál es el punto de corte que maximiza la ganancia acumulada (por ejemplo, *N* envíos).
 
 ### Paso 3: Ejecución del Ensamble Final (Replicación Exacta)
 Para replicar el archivo entregado, se debe ejecutar el notebook `03_corrida_ensamble.ipynb`. Este script tiene configurado como parámetro manual la variable `corte_optimo` basada en el resultado exacto del Paso 2.
 
-El notebook entrenará iterativamente los 20 modelos (a partir de la semilla base `331613`), promediará las probabilidades resultantes, y aplicará el corte superior a los clientes con mayor probabilidad, exportando de manera determinística el único archivo de predicción final requerido para replicar el resultado del Kaggle.
+El notebook entrenará iterativamente los 20 modelos (a partir de la semilla base `331613`), promediará las probabilidades resultantes, y aplicará el corte superior a los clientes con mayor probabilidad, exportando de manera determinística el único archivo de predicción final requerido para replicar el resultado.
 
 ### Paso 3: Archivo de Entrega
 Una vez finalizada la ejecución del Paso 3, el directorio generará un bloque de archivos CSV. El archivo que representa la predicción final oficial de esta entrega es ###, con el corte óptimo obtenido en el paso 2
-**`prediccion_202108_2_corte_11000.csv`**
+**`prediccion_202108_2_corte_11000.csv`** MODIFICAR
 
